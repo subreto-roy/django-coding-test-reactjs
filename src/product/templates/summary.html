@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>Data Summary</h1>
+    <ul>
+        <li>Number of Products: {{ product_count }}</li>
+        <li>Number of Variants: {{ variant_count }}</li>
+        <li>Number of Variant Prices: {{ variant_price_count }}</li>
+        <li>Number of Product Images: {{ product_image_count }}</li>
+    </ul>
+{% endblock %}

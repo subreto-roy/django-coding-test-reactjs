@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <form method="get">
+    {{ filter.form.as_p }}
+    <button type="submit">Search</button>
+  </form>
+  <hr>
+  <div class="row">
+    {% for product in object_list %}
+      <div class="col-sm-4">
+        <div class="card">
+          <img class="card-img-top" src="{{ product.image }}" alt="{{ product.title }}">
+          <div class="card-body">
+            <h5 class="card-title">{{ product.title }}</h5>
+            <p class="card-text">{{ product.description }}</p>
+            <p class="card-text"><strong>Price:</strong> {{ product.price }}</p>
+            <p class="card-text"><strong>Variant:</strong> {{ product.variant.variant_title }}</p>
+          </div>
+        </div>
+      </div>
+    {% empty %}
+      <p>No products found.</p>
+    {% endfor %}
+  </div>
+{% endblock %}
